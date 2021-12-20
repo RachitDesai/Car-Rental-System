@@ -12,8 +12,8 @@
     <!--/Header-->
     <header id="site-header" class="fixed-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light stroke py-lg-0">
-                <h1 class="navbar-brand
+            <div class="navbar navbar-expand-lg navbar-light stroke py-lg-0">
+                <h1 class="navbar-brand">
                         <span class="w3yellow">C<i class="fab fa-asymmetrik"></i>r </span>Rental
                     </h1>
               
@@ -29,7 +29,7 @@
                     
                 </div>
                
-            </nav>
+            </div>
         </div>
     </header>
 
@@ -45,23 +45,27 @@
                         to Rent a Car</h3>
                     <div class="banner-form-w3">
                         <!--/Request-a-call-form -->
-                        <form action="" method="post">
+                        <form >
                             <div class="form-style-w3ls">
-                                <div class="form-gd">
-                                    <label for="input_from">Click to Enjoy our Service</label>
-                                    <input type="button" value="Rental" background="black" onclick="openWin()">
+                               
+                                <div >
+                                    <label >Click to Enjoy our Service</label>
+                                    <button class="button" onclick=openWin()>Rental</button>
                                 </div>
-                                <div class="form-gd">
-                                    <label for="input_from"><br></label>
-                                    <input type="button" value="Drive" background="black" onclick="openWin()">
+                               
+                                <div >
+                                    <label><br></label>
+                                    <button class="button" onclick=openWin()>OutStation</button>
                                 </div>
-                                <div class="form-gd" background="black">
-                                    <label for="input_from"><br></label>
-                                    <input type="button" value="Outstation"  onclick="openWin()">
+                               
+                                <div >
+                                    <label><br></label>
+                                    <button class="button" onclick=openWin()>Drive</button>
                                 </div>
                             </div>
                         </form>
                     </div>
+                    <button class="buttonAnimated" id="button1" onclick=openNew()>Click Me for Fun !!!!!</button>
                 </div>
             </div>
         </div>
@@ -86,11 +90,11 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Our Services</h4>
                         <ul>
-                            <li><i class="fas fa-angle-right"></i> <a href="#blogs">Blog Posts</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="#stats">Stats</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="#Plans">Plans</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="#Deals">Deals</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="#Offers">Offers</a></li>
+                            <li><i class="fas fa-angle-right"></i> Blog Posts</a></li>
+                            <li><i class="fas fa-angle-right"></i> Stats</a></li>
+                            <li><i class="fas fa-angle-right"></i> Plans</a></li>
+                            <li><i class="fas fa-angle-right"></i> Deals</a></li>
+                            <li><i class="fas fa-angle-right"></i> Offers</a></li>
                         </ul>
                     </div>
 
@@ -109,6 +113,10 @@
         <script>
             function openWin() {
               window.open("about.html");
+            }
+
+            function openNew() {
+              window.open("Animation.html");
             }
             </script>
 </body>
