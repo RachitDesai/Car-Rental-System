@@ -1,0 +1,67 @@
+<!-- This XML Code was developed by Rachit Desai 
+Reg No: 2147225
+2MCA-B -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+
+targetNamespace="http://www.example.org/sample" 
+
+
+
+	<xs:element name="CarRental"></element>  
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Rental" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PickUp Point" type="xs:string"/>
+							<xs:element name="time" type="xs:integer"/>
+							<xs:element name="Car Type" type="xs:string"/>
+							<xs:element name="fare" type="Amt"/>
+							<xs:element name="feedback" type="xs:string"/>
+						</xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+             </xs:sequence>
+        </xs:complexType>
+
+	<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Outstation" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PickUp Point" type="xs:string"/>
+							<xs:element name="Drop Point" type="xs:string"/>
+							<xs:element name="time" type="xs:integer"/>
+							<xs:element name="Kilometers" type="xs:integer"/>
+							<xs:element name="Car Type" type="xs:string"/>
+							<xs:element name="fare" type="Amt"/>
+							<xs:element name="feedback" type="xs:string"/>
+						</xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+             </xs:sequence>
+        </xs:complexType>
+
+	<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Drive" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PickUp Point" type="xs:string"/>
+							<xs:element name="time" type="xs:integer"/>
+							<xs:element name="Kilometers" type="xs:integer"/>
+							<xs:element name="Documents" type="xs:image"/>
+							<xs:element name="Car Type" type="xs:string"/>
+							<xs:element name="fare" type="Amt"/>
+							<xs:element name="feedback" type="xs:string"/>
+						</xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+             </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
