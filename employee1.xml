@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="employee1.xsl"?>
+<company>
+    <employee>
+        <id>501</id>
+        <name>Rachit</name>
+        <age>51</age>
+        <salary>60000</salary>
+        <email>rachit@gmail</email>
+        <mobile>9898026206</mobile>
+        <designation>Data Analysist</designation>
+        <promotion>Developer</promotion>
+    </employee>
+	<employee>
+        <id>502</id>
+        <name>Giini</name>
+        <age>45</age>
+        <salary>50000</salary>
+        <email>ginni@gmail.com</email>
+        <mobile>990905938</mobile>
+        <designation>Android Developer</designation>
+        <promotion>Leader</promotion>
+    </employee>
+	
+    <employee>
+        <id>503</id>
+        <name>Rammana</name>
+        <age>50</age>
+        <salary>85000</salary>
+        <email>ram@gmail.com</email>
+        <mobile>77001121212</mobile>
+        <designation>HR</designation>
+        <promotion>Developer</promotion>
+    </employee>
+    
+    <employee>
+        <id>504</id>
+        <name>Neeraj</name>
+        <age>42</age>
+        <salary>80000</salary>
+        <email>neerja@gmail.com</email>
+        <mobile>77341980234</mobile>
+        <designation>Developer</designation>
+        <promotion>Leader</promotion>
+    </employee>
+</company>
