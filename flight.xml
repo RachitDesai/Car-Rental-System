@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="flight.xsl"?>
+<Travel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="flight.xsd">
+
+   <Flight>
+    <flightNo>1234</flightNo>
+    <airlineName>AirIndia</airlineName>
+    <source>BLR</source>
+    <destination>AMD</destination>
+    <fare>4900</fare>
+    <noofseats>32</noofseats>
+   </Flight>
+
+   <Flight>
+    <flightNo>2345</flightNo>
+    <airlineName>GoAir</airlineName>
+    <source>BLR</source>
+    <destination>BOM</destination>
+    <fare>5200</fare>
+    <noofseats>45</noofseats>
+   </Flight>
+
+   <Flight>
+    <flightNo>3456</flightNo>
+    <airlineName>Indigo</airlineName>
+    <source>CAL</source>
+    <destination>DEL</destination>
+    <fare>3900</fare>
+    <noofseats>57</noofseats>
+   </Flight>
+
+   <Flight>
+    <flightNo>4567</flightNo>
+    <airlineName>Vistara</airlineName>
+    <source>DEL</source>
+    <destination>HYD</destination>
+    <fare>4800</fare>
+    <noofseats>02</noofseats>
+   </Flight>
+
+   <Flight>
+    <flightNo>5678</flightNo>
+    <airlineName>AirAsia</airlineName>
+    <source>HYD</source>
+    <destination>MOH</destination>
+    <fare>7300</fare>
+    <noofseats>37</noofseats>
+   </Flight>
+
+   <Flight>
+    <flightNo>6789</flightNo>
+    <airlineName>SpiceJet</airlineName>
+    <source>IXR</source>
+    <destination>DEL</destination>
+    <fare>3500</fare>
+    <noofseats>17</noofseats>
+   </Flight>
+
+   <Flight>
+    <flightNo>7890</flightNo>
+    <airlineName>Vistara</airlineName>
+    <source>DEL</source>
+    <destination>AMD</destination>
+    <fare>3000</fare>
+    <noofseats>27</noofseats>
+   </Flight>
+
+   <Flight>
+    <flightNo>8901</flightNo>
+    <airlineName>AirIndia</airlineName>
+    <source>AMD</source>
+    <destination>CAL</destination>
+    <fare>4700</fare>
+    <noofseats>33</noofseats>
+   </Flight>
+
+</Travel>
