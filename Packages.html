@@ -5,49 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom Parser</title>
-    
-</head>
-<body>
-    <h1>Rentals</h1>
-    <p><button onclick="loadxmldoc()">Book Rides</button></p>
-
-    <table id="demo" border="1">
-        <tr>
-            <th>CarNo</th>
-            <th>CarName</th>
-            <th>Source</th>
-            <th>Destination</th>
-            <th>Fare</th>
-        </tr>
-    </table>
-
     <script>
-        function loadxmldoc(){
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function(){
-                if (this.readyState == 4 && this.status == 200){
-                    myFunction(this);
-                }
-            };
-            xmlhttp.open("GET","flight.xml",true);
-            xmlhttp.send();
-        }
-        function myFunction(xml){
-            var x, i, xmlDoc, table;
-            
-            xmlDoc = xml.responseXML;
-            table = "<tr><th>CarNo</th><th>CarName</th><th>source</th><th>destination</th><th>fare</th></tr>";
-            x = xmlDoc.getElementsByTagName("Car")
-            for (i = 0; i < x.length; i++){
-                table += "<tr><td>"+
-                    x[i].getElementsByTagName("CarNo")[0].childNodes[0].nodeValue + "</td><td>"+ 
-                    x[i].getElementsByTagName("CarName")[0].childNodes[0].nodeValue + "</td></tr>" +
-                    x[i].getElementsByTagName("source")[0].childNodes[0].nodeValue + "</td></tr>"+
-                    x[i].getElementsByTagName("destination")[0].childNodes[0].nodeValue + "</td></tr>"+
-                    x[i].getElementsByTagName("fare")[0].childNodes[0].nodeValue + "</td></tr>";
+        function loadXMLDoc(xname)
+        {
+            if(window.XMLHttpRequest)
+            {
+                xhttp=new XMLHttpRequest();
             }
-            document.getElementById("demo").innerHTML = table;
+            else{
+                xhttp=new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            xhttp.open("GET",xname,false);
+            xhttp.send();
+           return  xhttp.responseXML;
+        }
+        function remove(node)
+        {
+           xmlDoc= loadXMLDoc('Customer.xml');
+           y=xmlDoc.getElementsByTagName(node)[0];
+           xmlDoc.documentElement.removeChild(y);
+           alert('The Element ' +node+ 'has been removed!');
+        }
+        function show(element)
+        {
+            x=xmlDoc.getElementsByTagName(element);
+            for(i=0;i<x.length;i++)
+            {
+                document.write(x[i].childNodes[0].nodeValue);
+                document.write("<br\>");
+            }
         }
     </script>
+</head>
+<body>
+    <input type="button" value="Remove" onclick="remove('Customer')"/>
+    <input type="button" value="Show" onclick="show('name','age')"/>
 </body>
 </html>
