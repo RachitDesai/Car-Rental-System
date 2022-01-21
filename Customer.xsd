@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="CarRental">        
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Customer" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" type="xs:integer"/>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element name="age" type="myage"/>
+							<xs:element name="email" type="email"/> 
+							<xs:element name="mobile" type="phone"/>
+						</xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+				<xs:element name="Vehicle" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Number" type="xs:string"/>
+							<xs:element name="Name" type="xs:string"/>
+							<xs:element name="Type" type="xs:string"/> 
+							<xs:element name="Fare" type="xs:integer"/>
+						</xs:sequence>
+					 </xs:complexType>
+				</xs:element>
+             </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="myage">
+    	<xs:restriction base="xs:integer">
+    	<xs:minInclusive value="10"/>
+    	<xs:maxExclusive value="70"/>
+    </xs:restriction>
+</xs:simpleType>
+	<xs:simpleType name="email"> 
+    <xs:restriction base="xs:string"> 
+      <xs:pattern value="[^@]+@[^\.]+\..+"/> 
+    </xs:restriction> 
+</xs:simpleType>
+
+<xs:simpleType name="phone">
+    <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]{10}"/>
+    </xs:restriction>
+</xs:simpleType>
+
+
+</xs:schema>

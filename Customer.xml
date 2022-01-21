@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Customer.xsl"?>
+<CarRental  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="customer.xsd">
+
+
+    <Customer>
+        <id>501</id>
+        <name>Rachit</name>
+        <age>51</age>
+        <email>rachit@gmail.com</email>
+        <mobile>9898026206</mobile>
+    </Customer>
+	
+    <Customer>
+        <id>502</id>
+        <name>Ginni</name>
+        <age>17</age>
+        <email>ginni@gmail.com</email>
+        <mobile>1231226206</mobile>
+    </Customer>
+
+    <Customer>
+        <id>503</id>
+        <name>Rammana</name>
+        <age>27</age>
+        <email>rama@gmail.com</email>
+        <mobile>1234226206</mobile>
+    </Customer>
+
+    <Customer>
+        <id>504</id>
+        <name>Meghna</name>
+        <age>80</age>
+        <email>meghna@gmail.com</email>
+        <mobile>9586038522</mobile>
+    </Customer>
+
+     <Customer>
+        <id>505</id>
+        <name>Ravi</name>
+        <age>20</age>
+        <email>ravi@gmail.com</email>
+        <mobile>9909405933</mobile>
+    </Customer>
+
+
+
+
+ <Vehicle>
+    <Number>KA02AA1234</Number>
+    <Name>Innova</Name>
+    <Type>Car</Type >
+    <Fare>2000</Fare>
+</Vehicle>
+
+  
+ <Vehicle>
+    <Number>KA02AA5678</Number>
+    <Name>Bullet</Name>
+    <Type>Bike</Type >
+    <Fare>500</Fare>
+</Vehicle>
+
+  
+ <Vehicle>
+    <Number>KA02BC1209</Number>
+    <Name>Swift</Name>
+    <Type>Car</Type >
+    <Fare>1000</Fare>
+</Vehicle>
+
+
+   
+ <Vehicle>
+    <Number>KA02AA6704</Number>
+    <Name>Activa</Name>
+    <Type>Scooter</Type >
+    <Fare>300</Fare>
+</Vehicle>
+
+
+   
+ <Vehicle>
+    <Number>KA02AA1234</Number>
+    <Name>XUV</Name>
+    <Type>Car</Type >
+    <Fare>2000</Fare>
+</Vehicle>
+
+
+  
+ <Vehicle>
+    <Number>KA02AA1234</Number>
+    <Name>R15</Name>
+    <Type>Bike</Type >
+    <Fare>800</Fare>
+</Vehicle>
+
+ </CarRental>
