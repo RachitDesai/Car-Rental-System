@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<link href="assets/css/Register.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- web-fonts -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<!-- //web-fonts --> 
+
+<script>
+		// Name
+		function validatename(){
+        // get value of input email
+        var name=$("#name").val();
+        // use reular expression
+         var reg3 = /(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/;
+         if(reg3.test(name)){
+             return true;
+         }
+		 else
+		 {
+             return false;
+         }
+    	}
+
+		// Email 
+		function validateEmail(){
+        // get value of input email
+        var email=$("#email").val();
+        // use reular expression
+        const regex1=/^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})$/;
+        const regex2= /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
+		if(regex1.test(email.value)||regex2.test(email.value))
+		{
+             return true;
+         }
+		 else
+		 {
+             return false;
+         }
+
+		//  Password
+
+		 function validatephone(){
+        // get value of input email
+        var phone=$("#phone").val();
+        // use reular expression
+         var reg4 = /^(?:(?:\+|0{0,2})91(\s*|[\-])?|[0]?)?([6789]\d{2}([ -]?)\d{3}([ -]?)\d{4})$/;
+         if(reg4.test(phone)){
+
+             return true;
+         }else{
+             return false;
+         }
+    }
+
+		 //Form
+
+		 function validateForm()
+		 {
+			 if(validateEmail()  && validatename() && validatephone())
+			 {
+			 alert("Form Submitted Successfully");
+			 return true;
+			 }
+			 else
+			 alert("Error");
+			 return false;
+		 }
+    }
+
+		
+}
+</script>
+<!- -->
+</head>
+<body>
+	<!-- banner --> 
+<div class="video"> 
+	<div class="center-container">
+	    <div class="w3ls-agileinfo">
+			
+		</div>
+		 <div class="bg-agile">
+			<h2>Registration Form</h2>
+			<div class="login-form">	
+				<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+					<input type="text"  name="name" placeholder="Full Name"/>
+					<input type="Email"  name="email" placeholder="Email" required="" />
+					<input type="password" name="pswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+					<input type="Email"  name="Email" placeholder="Confirm"  />
+					<input type="text"  name="Address" placeholder="Street Address"  />
+					<input type="text"  name="Address" placeholder="Street Address Line2"  />
+					<div class="left-w3-agile">
+						<select class="form-control">
+							<option>Choose your country</option>
+							<option>Argentina</option>
+							<option>Georgia</option>
+							<option> Dominica</option>
+							<option>Lithuania</option>
+							<option> Monaco</option>
+						</select>
+						<input type="text"  name="Region" placeholder="Country"/>
+					</div>
+					<div class="right-agileits">
+						<input type="text"  name="City" placeholder="City" />
+						<input type="text"  name="Pin code" placeholder="Zip/postal code"  />
+					</div>
+					<input type="text"  name="Number" placeholder="Phone Number" />
+					<input type="submit" value="Submit">
+				</form>	
+			</div>	
+		</div>
+	<!-- //banner --> 
+	
+	</div>	
+</div>	
+</body>
+</html>
