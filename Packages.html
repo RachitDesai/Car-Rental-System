@@ -5,7 +5,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom Parser</title>
+    <style>
+        h1,h2,h3,h4,h5,h6{
+	        font-family: 'Oswald', sans-serif;
+        }
+        
+        
+        .link {
+            border-radius: 25px;
+            width: 10vw;
+            height: 40vh;
+            font-size: x-large;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            margin: 10px 5px;
+            display: flex;
+            color: rgb(95, 92, 92);
+            border: 5px solid black;
+            flex-direction: column;
+            justify-content: space-around;
+            place-items: center;
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 200px auto;
+            margin-left: 100px;
+        }
+
+        .main2{
+            padding: 60px;
+           
+        }
+        
+        body, html {
+                height: 100%;
+                margin: 0;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("./assets/images/carbg.jpg");
+            /* Full height */
+            height: 100%; 
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #a15037;
+            border: none;
+            color: #ccabab;
+            text-align: center;
+            font-size: 18px;
+            width: 100px;
+            height: 40px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .size {
+            width: 50%;
+            height: 200px;
+            background-color: rgb(90, 204, 175);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body class="bg">
+    <div><center><h1>Customers</h1></center></div>
+    <div class="main">
+        <div class="link">
+            <input class="button" type="button" value="Load" onclick="myFunction()  "/>
+            <input class="button" type="button" value="Remove" onclick="remove('Customer')"/>
+            <input class="button" type="button" value="Find" onclick="find()"/>
+            <input class="button" type="button" value="Replace" onclick="replace()"/>
+        </div>
+       <div class="main2" >
+            <table id="cust" class="size">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                </tr>
+            </table>
+
+
+            <p id="s_data"></p>
+
+
+    </div>
+</body>   
     <script>
+        xmlDoc = loadXMLDoc('customer.xml')
+
         function loadXMLDoc(xname)
         {
             if(window.XMLHttpRequest)
@@ -17,28 +117,71 @@
             }
             xhttp.open("GET",xname,false);
             xhttp.send();
-           return  xhttp.responseXML;
+            return  xhttp.responseXML;
         }
+
+        function myFunction(){
+            var x, i, table;
+           
+            table = "<tr><th>ID</th><th>Name</th><th>Age</th><th>Email</th><th>Mobile</th></tr>";
+            x = xmlDoc.getElementsByTagName("Customer")
+            for (i = 0; i < x.length; i++){
+                table += "<tr><td>"+
+                    x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + "</td><td>"+ 
+                    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("age")[0].childNodes[0].nodeValue + "</td><td>"+
+                    x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue + "</td><td>"+
+                    x[i].getElementsByTagName("mobile")[0].childNodes[0].nodeValue + "</td></tr>";
+            }
+            document.getElementById("cust").innerHTML = table;
+        }
+
         function remove(node)
         {
-           xmlDoc= loadXMLDoc('Customer.xml');
-           y=xmlDoc.getElementsByTagName(node)[0];
-           xmlDoc.documentElement.removeChild(y);
-           alert('The Element ' +node+ 'has been removed!');
+            let i = prompt("Enter Row Number U want to Remove","");
+            xmlDoc= loadXMLDoc('customer.xml');
+            y=xmlDoc.getElementsByTagName(node)[i-1];
+            xmlDoc.documentElement.removeChild(y);
+            alert('The Element ' + node + ' has been removed!');
         }
-        function show(element)
+
+
+
+        function find()
         {
-            x=xmlDoc.getElementsByTagName(element);
+            var clm = prompt("Enter The Column u want to search : ","");
+            var x=xmlDoc.getElementsByTagName(clm);
+            var flag = 0
+            let t = prompt("Enter Element to Searched","")
             for(i=0;i<x.length;i++)
             {
-                document.write(x[i].childNodes[0].nodeValue);
-                document.write("<br\>");
+                
+                var z = x[i].childNodes[0].nodeValue;
+                if (t == z)
+                {
+                    flag = 0;
+                    break;
+                }
+                else 
+                    flag= 1;
             }
+            if(flag == 0)
+                    alert("Element Found !!");
+            else
+                    alert("Element Not Found");
         }
+
+        function replace()
+        {        
+            var x,  txt, i, ele;
+            i = prompt("Enter the row Number U want to change : ","");
+            ele = prompt("Enter Column u want to change : ","");
+            x = xmlDoc.getElementsByTagName(ele)[i-1].childNodes[0];
+            txt = prompt("Enter New Value",""); 
+            x.nodeValue= txt;
+            return x.nodeValue
+        }
+        
     </script>
-</head>
-<body>
-    <input type="button" value="Remove" onclick="remove('Customer')"/>
-    <input type="button" value="Show" onclick="show('name','age')"/>
-</body>
+
 </html>
