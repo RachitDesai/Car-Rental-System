@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback Form</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/><!--stylesheet-css-->
+
+<!-- //css files -->
+
+<Script>
+		function digit()
+	{
+		var x = document.getElementById('name').value
+		if(x == 1 || x == 2 || x == 3 || x == 4 || x == 5 || x == 6 || x == 7 || x == 8 || x == 9 )
+		{
+			alert("Numbers are not allowed ");
+			return (false)
+		}
+	}
+
+	function capital() {
+  		var x = document.getElementById("name");
+  		x.value = x.value.toUpperCase();
+	}
+
+	function buttonState(){
+		var name = document.getElementById('name').value
+		var email=document.getElementById('email').value
+		var passw=document.getElementById('passw').value
+		
+
+		const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+		const validOfficial = /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,20})\.([a-z]{1,8})$/
+		const validPass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+
+		
+  		if(name == "" )
+  		{
+    		alert("Name is Required Feild !")
+    		return false;
+  		}
+
+		if(email== "" )
+		{
+			alert("Email is Required Feild !");
+			return false;
+		}
+
+		if (validEmail.test(email))
+		{}
+		else
+  		{
+    		alert("Incorrect email Address !")
+    		return false;
+		}
+
+		if (validOfficial.test(email))
+		{}
+		else
+  		{
+    		alert("Please Enter Ur Official Email id !")
+    		return false;
+		}
+		
+		if(passw == ""  )
+  		{
+    		alert("Password is Required")
+    		return false;
+  		}
+
+		  if (validPass.test(passw))
+		{}
+		else
+  		{
+    		alert("Weak Passwod :- \r\n - Please enter atleast 1 digit \r\n - Please enter atleast 1 speacial character \r\n - Please enter atleast letter in both Case")
+    		return false;
+		}
+
+		alert ("Form Submitted Successfully !!! ")	
+	}
+
+</Script>
+</head>
+<body>
+	<h1>Christ University Feedback Form</h1>
+<div class="w3l-main">
+	<div class="w3l-from">
+		<form action="#" method="get" action="/" onsubmit="buttonState()">	
+			<div class="w3l-user">
+				<label class="head">Student's Name<span class="w3l-star"> * </span></label>
+				<input type="text" name="name"  id="name" placeholder="" onkeyup="digit()" onkeypress="capital()">
+			</div>
+			<div class="w3l-user">
+				<label class="head"> University Email<span class="w3l-star"> * </span></label>
+				<input type="text" name="email" id = "email" placeholder="" >
+			</div>
+
+			<div class="w3l-user">
+				<label class="head"> Password <span class="w3l-star"> * </span></label>
+				<input type="text" name="passw" id = "passw" placeholder="">
+			</div>
+
+			<div class="w3l-user">
+				<label class="head">Address<span class="w3l-star"> * </span></label>
+				<input type="text" name="Address" placeholder="" >
+			</div>
+			<div class="w3l-user">
+				<label class="head">What U Like Most About Campus...?</label>
+			</div>
+			<div class="abc">
+				<br>
+				<input type="checkbox" id = "student"value="student">
+				<label for="student"> Student &emsp; &emsp; &emsp; &nbsp;</label>
+
+				<input type="checkbox" id = "location" value="location">
+				<label for="location"> Location &emsp; &emsp; &emsp;</label>
+
+				<input type="checkbox" id = "campus" value="campus">
+				<label for="campus"> Campus</label><br><br>
+			
+				<input type="checkbox" id = "atmosphere"value="atmosphere">
+				<label for="atmosphere"> atmosphere &emsp; &emsp; </label>
+
+				<input type="checkbox" id = "dormrooms"value="dormrooms">
+				<label for="dormrooms">Dorm Rooms &emsp; &emsp; </label>
+
+				<input type="checkbox" id = "sports"value="sports">
+				<label for="sports"> Sports</label><br>
+				<br>
+			</div>
+
+			<div class="w3l-user">
+				<label class="head">How U Became Interested...?</label>
+			</div>
+
+			<div class="abc">
+				<br>
+				<input type="radio" id = "friends" value="friends">
+				<label for="friends">Friends&emsp;</label>
+
+				<input type="radio" id = "television" value="television">
+				<label for="television">Television&emsp;</label>
+
+				<input type="radio" id = "internet" value="internet">
+				<label for="internet">Internet&emsp;</label>
+
+				<input type="radio" id = "others" value="others">
+				<label for="others">Others&emsp;</label>
+				<br>
+			</div>
+
+			<div class="w3l-rem">
+				<br>
+				<div class="w3l-right">
+					<label class="w3l-set2">Feedback</label>
+					<textarea></textarea>
+				</div>	
+				<div class="btn">
+					<input type="submit" name="submit" value="Submit"/>
+					<input type="reset" name="reset" value="Reset"/>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</form>
+	</div>
+</div>
+	
+
+</body>
+</html>
