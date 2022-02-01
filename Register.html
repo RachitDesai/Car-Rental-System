@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<link href="assets/css/Register.css" rel="stylesheet" type="text/css" media="all" />
+<!-- web-fonts -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<!-- //web-fonts --> 
+
+<script type="text/javascript">
+
+	// function validateName()
+	// {
+  		// const name = document.getElementById('name').value
+  		// if(name == "" || name == NULL )
+  		// {
+    	// 	alert("Name is Required")
+    	// 	return (false)
+  		// }
+		// else 
+		//   return (true)
+	// }
+
+	
+
+
+	// function validateEmail()
+	// {
+	// 	const email=document.getElementById('email')
+	// 	if(email.value == "" || email.value == NULL)
+	// 	{
+	// 		alert("Email is Required !");
+	// 		return (false)
+	// 	}
+	// 	const regex2= /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})(.[a-z]{1,8})$/
+	// 	const regex1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+	// 	if (regex2.test(email.value))
+	// 	{
+
+	// 	}
+  	// 	{
+    // 		alert("You have entered an invalid email address!")
+    // 		return (false)
+	// 	}
+	// }
+
+	// function validatePassword() {
+    // 	var passw = document.getElementById('passw').value;
+    // 	var min = 6;
+    // 	var max = 16;
+    // 	var regex  =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/ 
+    // 	if(passw == "" || passw == NULL)
+	// 	{
+	// 		alert("Password is Required !")
+	// 		return false;
+	// 	}
+    // 	if(regex.test(passw)) {
+
+	// 	}
+	// 	else
+	// 	{
+    //     	alert("password should contain atleast one number and one special character");
+    //     	return false;
+	// 	}
+    // 	}
+
+	// 	function c_password()
+	// 	{
+	// 		var pass1=document.getElementById('passw').value
+	// 		var pass2=document.getElementById('c_passw').value
+
+	// 		if(pass1 != pass2)
+	// 		{	
+	// 			alert('Password Not Match');
+	// 			return false;
+	// 		}
+			
+	// 	}	
+	// function validateForm()
+	// {
+	// 	if(validateName() && validateEmail() )
+	// 	{
+	// 		return (true)
+	// 	}
+	// 	else
+	// 		return (false)
+	// }
+
+
+
+	function digit()
+	{
+		var x = document.getElementById('name').value
+		if(x == 1 || x == 2 || x == 3 || x == 4 || x == 5 || x == 6 || x == 7 || x == 8 || x == 9 )
+		{
+			alert("Numbers are not allowed ");
+			return (false)
+		}
+	}
+
+	function capital() {
+  		var x = document.getElementById("name");
+  		x.value = x.value.toUpperCase();
+	}
+
+	function star()
+	{
+		var x = document.getElementById("passw");
+		x.style='block'
+	}
+	
+    //   function ValidateEmail() {
+	
+	// 	const email=document.getElementById('email')
+	// 	if(email.value == "" || email.value == NULL)
+	// 	{
+	// 		alert("Email is Required !");
+	// 		return (false)
+	// 	}
+	// 	const regex2= /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})(.[a-z]{1,8})$/
+	// 	const regex1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+		// if (regex2.test(email.value))
+		// {
+
+		// }
+		// else
+  		// {
+    	// 	alert("You have entered an invalid email address!")
+    	// 	return (false)
+		// }
+	// }
+          
+    //   function ValidateNum() {
+    //     var validnum = /^(?:(?:\+|0{0,2})91(\s*|[\-])?|[0]?)?([6789]\d{2}([ -]?)\d{3}([ -]?)\d{4})$/;
+    //     if (document.form1.number.value.match(validnum)){
+    //       document.form1.number.focus();
+    //       return true;
+    //     } else {
+    //       alert("Invalid number");
+    //       document.form1.number.focus();
+    //       return false;
+    //     }
+    //   }
+    //   function ValidateName() {
+	// 	const name = document.getElementById('name').value
+  	// 	if(name == "" || name == NULL )
+  	// 	{
+    // 		alert("Name is Required")
+    // 		return (false)
+  	// 	}
+	// 	else 
+	// 	  return (true)
+    //       }
+    //   function ValidatePass() {
+    //     var validPass = /(^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,})/;
+    //     if (document.form1.passw.value.match(validPass)) {
+    //           document.form1.passw.focus();
+    //           return true;
+    //         } else {
+    //           alert("Invalid Password!");
+    //           document.form1.passw.focus();
+    //           return false;
+    //         }
+    //       }
+    //   function matchPassword() {  
+    //     var pw1 = document.getElementById("passw").value;  
+    //     var pw2 = document.getElementById("c_passw").value;  
+    //     if(pw1 != pw2)  
+    //     {   
+    //       alert("Passwords did not match");  
+    //     }  
+    //   }  
+    
+    function buttonState(){
+		var name = document.getElementById('name').value
+		var email=document.getElementById('email').value
+		var passw=document.getElementById('passw').value
+		var c_passw=document.getElementById('c_passw').value
+		var pin=document.getElementById('pin').value
+		var num=document.getElementById('num').value
+
+		const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+		const validOfficial = /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,20})\.([a-z]{1,8})$/
+		const validPass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+		const validPin =  /^\d{6}$/
+		const validPhn = /^\d{10}$/
+
+		
+  		if(name == "" )
+  		{
+    		alert("Name is Required Feild !");
+    		return;
+  		}
+
+		if(email== "" )
+		{
+			alert("Email is Required Feild !");
+			return;
+		}
+
+		if (validEmail.test(email))
+		{}
+		else
+  		{
+    		alert("Incorrect email Address !");
+    		return;
+		}
+
+		if (validOfficial.test(email))
+		{}
+		else
+  		{
+    		alert("Please Enter Ur Official Email id !");
+    		return;
+		}
+		
+		if(passw == ""  )
+  		{
+    		alert("Password is Required");
+    		return;
+  		}
+
+		  if (validPass.test(passw))
+		{}
+		else
+  		{
+    		alert("Weak Passwod :- \r\n - Please enter atleast 1 digit \r\n - Please enter atleast 1 speacial character \r\n - Please enter atleast letter in both Case");
+    		return;
+		}
+		
+		if(passw != c_passw)
+		{
+			alert("Password not match!");
+			return;
+		}
+
+		
+		if (validPin.test(pin))
+		{
+
+		}
+		else
+  		{
+    		alert("Pincode Invalid !!");
+    		return;
+		}
+
+		if(num == "" )
+  		{
+    		alert("Number is Required");
+    		return;
+  		}	
+		
+		if (validPhn.test(num))
+		{
+
+		}
+		else
+  		{
+    		alert("Phone Number Invalid !!");
+    		return;
+		}
+
+		alert ("Form Submitted Successfully !!! ");
+			
+	}
+
+	function getColor() 
+        {
+            var value = document.cookie;
+
+            if(value == "")
+                document.body.style.backgroundImage = "url('../assets/images/banner1.jpg')";
+            else
+            {
+                var color = value.split("=");
+                document.body.style.backgroundImage = color[1];
+            }
+        }
+
+        function setColor() 
+        {
+            var c;
+            with(document.forms.myForm)
+            {
+                c = color.options[color.selectedIndex].value;
+                document.cookie = "color=" + c + ";";
+                alert("Cookie Updated");
+                getColor();
+            }
+        }
+
+	function WriteCookie() {
+    if( document.form1.name.value == "" ) {
+       alert("Enter name!");
+       return;
+    }
+    if( document.form1.email.value == "" ) {
+       alert("Enter email!");
+       return;
+    }
+    if( document.form1.num.value == "" ) {
+       alert("Enter number!");
+       return;
+    }
+    if( document.form1.add.value == "" ) {
+       alert("Enter Address!");
+       return;
+    }
+    
+    cookievaluename = escape(document.form1.name.value) + ";";
+    cookievalueemail = escape(document.form1.email.value) + ";";
+    cookievaluenum = escape(document.form1.num.value) + ";";
+    lsvaluepass = escape(document.form1.passw.value) + ";";
+    ssvalueadd = escape(document.form1.add.value) + ";";
+    
+    sessionStorage.setItem("Address:",ssvalueadd);
+    
+    localStorage.setItem("Password:",lsvaluepass);
+    
+    document.cookie = "name=" + cookievaluename ;"expires= + Sat, 05 Feb 2022 12:00:00 UTC"; 
+    document.cookie = "email=" + cookievalueemail;"expires= + Sat, 06 Feb 2022 12:00:00 UTC"; 
+    document.cookie = "number=" + cookievaluenum; 
+    
+    alert("Cookies Updated Successfully")
+    
+    // var allcookies = document.cookie;
+    // document.write ("<br>" + "All Cookies : " + allcookies + "<br>" );
+    // cookiearray = allcookies.split(';');
+    
+    // for(var i=0; i<cookiearray.length; i++) {
+    //    n = cookiearray[i].split('=')[0];
+    //    value = cookiearray[i].split('=')[1];
+    //    document.write ("Key is : " + n + " and Value is : " + value);
+    //    document.write("<br>");
+    //}
+}
+ function RemoveCookie()
+ {
+    var cookieArray = document.cookie.split(";")
+		for(var i=0;  i<cookieArray.length; i++)
+		{
+			var valueArray=cookieArray[i].split("=");
+			console.log(valueArray);
+
+			if(valueArray[0] == ' name')
+			{
+				document.form1.name.value = valueArray[1]
+			}
+			if(valueArray[0] == ' email')
+			{
+				document.form1.email.value = valueArray[1]
+			}
+			if(valueArray[0] == ' number')
+			{
+				document.form1.num.value = valueArray[1]
+			}
+		}
+ }
+</script>
+
+</head>
+<body onload="getColor()">
+	<!-- banner --> 
+	<div class="drop">
+		<form name="myForm">
+			<select name="color" class="dropdown" onchange="setColor()">
+				<option value="url('../assets/images/banner1.jpg')" class="op">Default
+				<option value="url('../assets/images/g1.jpg')" class="op">Luxury Car
+				<option value="url('../assets/images/g2.jpg')" class="op">Super Car
+				<option value="url('../assets/images/g3.jpg')" class="op">Sports Car
+				<option value="url('../assets/images/g5.jpg')" class="op">Heavy Car
+			</select>
+			
+		</form>
+	</div>
+
+	<div class="center-container">
+		 <div class="bg-agile">
+			<h2>Registration Form</h2>
+			<div class="login-form">	
+				<form  name="form1" action="#" onsubmit="buttonState()">
+					<input type="text"  name="name" id = "name" placeholder="Full Name" onkeypress="capital()" onkeyup="digit()"/>
+					<input type="text"  name="email" id = "email"  placeholder="Email"  />
+					<input type="text"  name="passw" id = "passw" placeholder="Password" onkeypress="star()"/>
+					<input type="text"  name="c_passw" id = "c_passw"  placeholder="Confirm Password" />
+					<input type="text"  name="Address"   id = "add"placeholder="Street Address"/>
+					<div class="left-w3-agile">
+						<select class="form-control">
+							<option>Choose your state</option>
+							<option>Andhra Pradesh</option>
+							<option>Arunachal Pradesh</option>
+							<option>Assam</option>
+							<option>Bihar</option>
+							<option>Chattisgarh</option>
+							<option>Goa</option>
+							<option>Gujrat</option>
+							<option>Haryana</option>
+							<option>Himachal Pradesh</option>
+							<option>Jharkhand</option>
+							<option>Karnataka</option>
+							<option>Kerala</option>
+							<option>Madhya Pradesh</option>
+							<option>Maharastra</option>
+							<option>Manipur</option>
+							<option>Meghalaya</option>
+							<option>Mizorm</option>
+							<option>Nagaland</option>
+							<option>Odisha</option>
+							<option>Punjab</option>
+							<option>Rajasthan</option>
+							<option>Sikkim</option>
+							<option>Tamil Nadu</option>
+							<option>Tripura</option>
+							<option>Telangana</option>
+							<option>Uttar Pradesh</option>
+							<option>Uttarakhand</option>
+						</select>
+						<input type="text"  name="Region" placeholder="Country" onkeypress="capital()"/>
+					</div>
+					<div class="right-agileits">
+						<input type="text"  name="City" placeholder="City" />
+						<input type="text"  name="Pin code" id ="pin" placeholder="Pin code"  />
+					</div>
+					<input type="text"  name="Number" id="num" placeholder="Phone Number" />
+					<input type="submit" value="Submit">
+				</form>	
+			</div>	
+		</div>
+	<!-- //banner -->
+	<table>
+	<tr>	 
+	<button class="button" onclick="WriteCookie()">.   .</button>
+	<button class="button btn1"  onclick="RemoveCookie()">.   .</button>
+	</tr>
+</table>
+	</div>	
+	
+</body>
+</html>
