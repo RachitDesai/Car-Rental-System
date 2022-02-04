@@ -1,0 +1,64 @@
+<!DOCTYPE html>    
+ <html>    
+ <head>    
+   <title>Employee Details</title>    
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>    
+   <script type="text/javascript" src="emp.js"></script> 
+   
+   <style>  
+   
+   body, html {
+                height: 100%;
+                margin: 0;
+        }
+   .bg {
+    /* The image used */
+    background-image: url("./assets/images/carbg.jpg");
+    /* Full height */
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.size {
+            width: 50%;
+            height: 200px;
+            background-color: rgb(90, 204, 175);
+            border: 2px solid black;
+            
+        }
+
+        p{
+	        font-family: 'Oswald', sans-serif;
+        }
+</style>
+
+
+
+ </head>    
+ <body ng-app="employeeApp" class="bg">    
+   <div align="center"><p>Employee Information</p></div>    
+   <div ng-controller="employeeCtrl">    
+     <table class="size" align="center">    
+       <tr>    
+         <th>ID</th>    
+         <th>Name</th>    
+         <th>Gender</th>    
+         <th>Salary</th>    
+         <th>Bonus</th>    
+         <th>Total Salary</th>    
+       </tr>    
+       <tr ng-repeat="employee in employees">    
+         <td>{{employee.id}}</td>    
+         <td>{{employee.name}}</td>    
+         <td>{{employee.gender}}</td>    
+         <td>{{employee.salary}}</td>    
+         <td>{{employee.bonus}}</td>    
+         <td>{{(employee.salary)--(employee.bonus)}}</td>    
+       </tr>    
+     </table>    
+   </div>    
+ </body>    
+ </html>    
