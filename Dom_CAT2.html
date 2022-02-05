@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Parser</title>
+    <style>
+        h1,h2,h3,h4,h5,h6{
+	        font-family: 'Oswald', sans-serif;
+        }
+        
+        
+        .link {
+            border-radius: 25px;
+            width: 10vw;
+            height: 40vh;
+            font-size: x-large;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            margin: 10px 5px;
+            display: flex;
+            color: rgb(95, 92, 92);
+            border: 5px solid black;
+            flex-direction: column;
+            justify-content: space-around;
+            place-items: center;
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 200px auto;
+            margin-left: 100px;
+        }
+
+        .main2{
+            padding: 60px;
+           
+        }
+        
+        body, html {
+                height: 100%;
+                margin: 0;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("./assets/images/carbg.jpg");
+            /* Full height */
+            height: 100%; 
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #a15037;
+            border: none;
+            color: #ccabab;
+            text-align: center;
+            font-size: 18px;
+            width: 100px;
+            height: 40px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .size {
+            width: 50%;
+            height: 200px;
+            background-color: rgb(90, 204, 175);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body class="bg">
+    <div><center><h1>Customers</h1></center></div>
+    <div class="main">
+        <div class="link">
+            <input class="button" type="button" value="Load" onclick="myFunction()  "/>
+            <input class="button" type="button" value="Remove" onclick="remove('ComputerScience')"/>
+            <input class="button" type="button" value="Find" onclick="find()"/>
+            <input class="button" type="button" value="Replace" onclick="replace()"/>
+        </div>
+       <div class="main2" >
+            <table id="cust" class="size">
+                <tr>
+                    
+                    <th>Name</th>
+                    <th>University</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                </tr>
+            </table>
+
+
+            <p id="s_data"></p>
+
+
+    </div>
+</body>   
+    <script>
+        xmlDoc = loadXMLDoc('Student.xml')
+
+        function loadXMLDoc(xname)
+        {
+            if(window.XMLHttpRequest)
+            {
+                xhttp=new XMLHttpRequest();
+            }
+            else{
+                xhttp=new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            xhttp.open("GET",xname,false);
+            xhttp.send();
+            return  xhttp.responseXML;
+        }
+
+        function myFunction(){
+            var x, i, table;
+           
+            table = "<tr><th>Name</th><th>University</th><th>Mobile</th><th>Email</th></tr>";
+            x = xmlDoc.getElementsByTagName("ComputerScience")
+            for (i = 0; i < x.length; i++){
+                table += "<tr><td>"+
+                    x[i].getElementsByTagName("Stu-name")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Stu-university")[0].childNodes[0].nodeValue + "</td><td>"+
+                    x[i].getElementsByTagName("Stu-phone")[0].childNodes[0].nodeValue + "</td><td>"+
+                    x[i].getElementsByTagName("Stu-email")[0].childNodes[0].nodeValue + "</td></tr>";
+            }
+            document.getElementById("cust").innerHTML = table;
+        }
+
+        function remove(node)
+        {
+            let i = prompt("Enter Row Number U want to Remove","");
+            xmlDoc= loadXMLDoc('student.xml');
+            y=xmlDoc.getElementsByTagName(node)[i-1];
+            xmlDoc.documentElement.removeChild(y);
+            alert('The Element ' + node + ' has been removed!');
+        }
+
+        
+    </script>
+
+</html>

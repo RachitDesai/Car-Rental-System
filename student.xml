@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Christ>
+   
+   <ComputerScience>
+    <Stu-name>Rachit</Stu-name>
+    <Stu-university>Christ</Stu-university>
+    <Stu-phone>9898026290</Stu-phone>
+    <Stu-email>rachit@gmail.com</Stu-email>
+   </ComputerScience>
+
+   <ComputerScience>
+    <Stu-name>Ginni</Stu-name>
+    <Stu-university>Jain</Stu-university>
+    <Stu-phone>9909405938</Stu-phone>
+    <Stu-email>ginni@gmail.com</Stu-email>
+   </ComputerScience>
+
+   <ComputerScience>
+    <Stu-name>Raj</Stu-name>
+    <Stu-university>Pune</Stu-university>
+    <Stu-phone>7567346118</Stu-phone>
+    <Stu-email>raj@gmail.com</Stu-email>
+   </ComputerScience>
+</Christ>
