@@ -20,11 +20,6 @@
         }
 	}
 
-	function capital() {
-  		var str = document.getElementById("name");
-       
-  		str.value = str.value.toUpperCase();
-	}
 
 	function numbers() {
         var x = event.which;
@@ -35,6 +30,129 @@
             return false;
         }
     }
+
+	function validateName()
+	   {
+		var name = document.getElementById('name').value
+		if(name == "" )
+  		{
+    		document.getElementById("s_name1").innerHTML = "**Please Fill the User Name";
+            return false;
+        }
+        else
+        {
+            document.getElementById("name").style.background = "green";
+            return true;
+        }
+	   }
+
+
+	   function validateEmail()
+	   {
+		var email=document.getElementById('email').value
+		const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+		const validOfficial = /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,20})\.([a-z]{1,8})$/
+
+		if(email== "" )
+		{
+			document.getElementById("s_email1").innerHTML = "**Please Fill the Email ID";
+            return false;
+		}
+
+		if (validEmail.test(email))
+		{
+			
+		}
+		else
+  		{
+    		document.getElementById("s_email1").innerHTML = "**Enter Valid Email Address ";
+            return false;
+		}
+
+		if (validOfficial.test(email))
+		{
+			document.getElementById("email").style.background = "green";
+			document.getElementById("s_email1").innerHTML = "";
+            return true;
+		}
+		else
+  		{
+              document.getElementById("s_email1").innerHTML = "**Official Email is needed";
+            return false;
+
+          }
+		
+	   }
+
+	   function validatePassword()
+	   {
+		var passw=document.getElementById('passw').value
+		const validPass = /^(?=.*[0-9])(?=.*[~`!@#$%^&amp;*()-_+={}/?])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+		if (validPass.test(passw))
+		{
+			document.getElementById("passw").style.background = "green";
+			document.getElementById("s_passw1").innerHTML = "";
+            return true;
+		}
+		else
+  		{
+            document.getElementById("s_passw1").innerHTML = "** - Please enter atleast 1 digit,1 speacial character and letter in both Case";
+            return false;
+    	
+		}
+	}
+
+		function c_validatePassword()
+		{
+			var passw=document.getElementById('passw').value
+			var c_passw=document.getElementById('c_passw').value
+			if(passw != c_passw)
+			{
+				document.getElementById("s_cpassw1").innerHTML = "**Confirm Password does not match";
+            	return false;
+			}
+			else
+			{
+				document.getElementById("c_passw").style.background = "green";
+				document.getElementById("s_cpassw1").innerHTML = "";
+            	return true;
+			}
+
+		}
+
+		function validateAge()
+		{
+			var age=document.getElementById('age').value
+			if(age >= 10 && age<=90 )
+			{
+				document.getElementById("age").style.background = "green";
+				document.getElementById("s_age1").innerHTML = "";
+            	return true;
+			}
+			else
+			{		
+				document.getElementById("s_age1").innerHTML = "**Please Enter valid  Age";
+            	return false;
+			}
+		}
+
+		function validatePhone()
+		{
+			var num=document.getElementById('num').value
+			const validPhn = /^\d{10}$/
+
+			if (validPhn.test(num))
+			{
+				document.getElementById("num").style.background = "green";
+				document.getElementById("s_phone1").innerHTML = "";
+            	return true;
+			}
+			else
+  			{
+            	document.getElementById("s_phone1").innerHTML = "**Phone Number Not Valid";
+            	return false;
+			}
+		}
     
 	
    
@@ -139,6 +257,54 @@
 	}
 
 
+	function validateForm(){
+		var name = document.getElementById('name').value
+		var email=document.getElementById('email').value
+		var passw=document.getElementById('passw').value
+		var c_passw=document.getElementById('c_passw').value
+		var age=document.getElementById('age').value
+		var num=document.getElementById('num').value
+
+		if(name == "" )
+  		{
+			document.getElementById("s_name1").innerHTML = "**Please Fill the User Name";
+        	return false;
+    	}
+
+		if(email== "" )
+		{
+			document.getElementById("s_email1").innerHTML = "**Please Fill the Email ID";
+            return false;
+		}
+
+		if(passw == ""  )
+  		{
+    		document.getElementById("s_passw1").innerHTML = "**Please Fill the Password";
+            return false;
+  		}
+
+		  if(age == "")
+        {
+            document.getElementById("s_age1").innerHTML = "**Please Fill the Age";
+            return false;
+        }	
+
+		if(num == "" )
+  		{
+    		document.getElementById("s_phone1").innerHTML = "**Please Fill the Phone Number";
+            return false;
+  		}
+
+		if(validateName() && validateEmail() && validatePassword() && c_validatePassword() && validateAge() && validatePhone())
+		{
+			
+			alert ("Form Submitted Successfully !!! ");
+			return true;
+		}	
+		else
+			alert("Error !")
+		}
+
 	function WriteCookie() {
    
     
@@ -170,18 +336,18 @@
 		 <div class="bg-agile">
 			<h2>Registration Form</h2>
 			<div class="login-form">	
-				<form  name="form1" action="#" onsubmit="return buttonState()">
-					<input type="text"  name="name" id = "name" placeholder="User Name" onkeypress="capital()" onkeyup="digit()" onchange="call()"/>
+				<form  name="form1" action="Dom_CAT2.html" onsubmit="return validateForm()">
+					<input type="text"  name="name" id = "name" placeholder="User Name" style="text-transform: capitalize;" onkeyup="digit()" onchange="validateName()"/>
                     <span id="s_name1" class="sp1"></span>
-					<input type="text"  name="email" id = "email"  placeholder="Email"  />
+					<input type="text"  name="email" id = "email"  placeholder="Email" onchange="validateEmail()" />
                     <span id="s_email1" class="sp1"></span>
-					<input type="password"  name="passw" id = "passw" placeholder="Password" onkeypress="star()"/>
+					<input type="password"  name="passw" id = "passw" placeholder="Password" onchange="validatePassword()"/>
                     <span id="s_passw1" class="sp1"></span>
-					<input type="password"  name="c_passw" id = "c_passw"  placeholder="Confirm Password" />
+					<input type="password"  name="c_passw" id = "c_passw"  placeholder="Confirm Password" onchange="c_validatePassword()" />
                     <span id="s_cpassw1" class="sp1"></span>
-					<input type="text"  name="age"   id = "age" placeholder="Age"/>
+					<input type="text"  name="age"   id = "age" placeholder="Age" onchange="validateAge()"/>
                     <span id="s_age1" class="sp1"></span>
-					<input type="text"  name="Number" id="num" placeholder="Phone Number" onkeypress="numbers()"/>
+					<input type="text"  name="Number" id="num" placeholder="Phone Number" onkeypress="numbers()" onchange="validatePhone()"/>
                     <span id="s_phone1" class="sp1"></span>
 					<input type="submit" value="Submit">
 				</form>	
@@ -193,7 +359,7 @@
         <button class="button" onclick="WriteCookie()">.   .</button>
         
         </tr>
-	</div>
+	</div>	
 	
 </body>
 </html>
