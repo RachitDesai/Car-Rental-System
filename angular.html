@@ -2,8 +2,8 @@
  <html>    
  <head>    
    <title>Employee Details</title>    
-   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>    
-   <script type="text/javascript" src="emp.js"></script> 
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>    
+   <script type="text/javascript"a src="student.js"></script> 
    
    <style>  
    
@@ -33,32 +33,64 @@
         p{
 	        font-family: 'Oswald', sans-serif;
         }
+
+  
 </style>
 
 
 
  </head>    
- <body ng-app="employeeApp" class="bg">    
-   <div align="center"><p>Employee Information</p></div>    
-   <div ng-controller="employeeCtrl">    
-     <table class="size" align="center">    
-       <tr>    
-         <th>ID</th>    
-         <th>Name</th>    
-         <th>Gender</th>    
-         <th>Salary</th>    
-         <th>Bonus</th>    
-         <th>Total Salary</th>    
-       </tr>    
-       <tr ng-repeat="employee in employees">    
-         <td>{{employee.id}}</td>    
-         <td>{{employee.name}}</td>    
-         <td>{{employee.gender}}</td>    
-         <td>{{employee.salary}}</td>    
-         <td>{{employee.bonus}}</td>    
-         <td>{{(employee.salary)--(employee.bonus)}}</td>    
-       </tr>    
-     </table>    
+ <body   ng-controller="myCtrl" class="bg">
+  <h2 style="text-align: center;">Customer Details</h2>
+  <div ng-controller="myCtrl">
+      Row to Display:<input type="number" step="1" min="0" max="6" ng-model="rowlimit" placeholder="Number of rows to be displayed"/><br><br>
+      Enter   Name :<input type="text" placeholder="Search Customer" ng-model="search"><br><br>
+      Enter   Number:<input type="text" placeholder="Search CustomerId" ng-model="limit"/><br><br>
+
+
+
+
+
+      
+     
+<!-- <table class="size" >
+  <tr>
+      <th scope="col" ng-click="orderByall('id')">CustomerId
+          <br>
+          <input type="text" ng-model="search.id" >
+      </th>
+      <th scope="col" ng-click="orderByall('name')">Name
+          <br>
+          <input type="text" ng-model="search.name">
+      </th>
+      <th scope="col" ng-click="orderByall('age')">Age
+          <br>
+          <input type="text" ng-model="search.age">
+      </th>
+      <th scope="col" ng-click="orderByall('email')" >Email
+          <br>
+          <input type="text" ng-model="search.email">
+      </th>
+      <th scope="col" ng-click="orderByall('mobile')" >Mobile
+        <br>
+        <input type="text" ng-model="search.mobile">
+    </th>
+  </tr>
+ 
+  <tbody>
+  <tr ng-repeat="item in names| limitTo:rowlimit |filter:search| orderBy:myOrderBy ">
+      <td >{{item.id| myfilterid:limit}}</td>
+      <td>{{item.name| myfilter:search}}</td>
+      <td>{{item.age}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.mobile}}</td>
+     
+
+  </tr>
+</tbody>
+         
+  
+</table> -->
    </div>    
  </body>    
  </html>    
