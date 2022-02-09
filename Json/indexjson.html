@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+   
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="emp.js"></script>
+    <link href="test1.css" rel="stylesheet" type="text/css" />   
+</head>
+<body ng-controller="myCtrl" class="bg">
+    <h2 style="text-align: center;">Customer Details</h2>
+    
+    <div ng-controller="myCtrl">
+        Row to Display:<input type="number" step="1" min="0" max="6" ng-model="rowlimit" placeholder=""/><br><br>
+        Search Name :<input type="text"  ng-model="search"><br><br>
+       <br><br>
+       
+<table class="size" align="center">
+    <tr>
+        <th scope="col" ng-click="orderByall('id')">Id
+            <br>
+            <input type="text" ng-model="search.id" >
+        </th>
+        <th scope="col" ng-click="orderByall('name')">Name
+            <br>
+            <input type="text" ng-model="search.name">
+        </th>
+        <th scope="col" ng-click="orderByall('age')">Age
+            <br>
+            <input type="text" ng-model="search.age">
+        </th>
+        <th scope="col" ng-click="orderByall('email')">Email
+            <br>
+            <input type="text" ng-model="search.email">
+        </th>
+        <th scope="col" ng-click="orderByall('mobile')" >Phone
+            <br>
+            <input type="text" ng-model="search.mobile">
+        </th>
+    </tr>
+   
+    <tbody>
+        <tr ng-repeat="item in names| limitTo:rowlimit |filter:search| orderBy:myOrderBy ">
+            <td >{{item.id| myfilterid:limit}}</td>
+            <td>{{item.name| myfilter:search}}</td>
+            <td>{{item.age|myFormat}}</td>
+            <td>{{item.email|lowercase}}</td>
+            <td>{{item.mobile}}</td>
+           
+
+        </tr>
+    </tbody>
+</table>
+
+    </div>
+    
+</body>
+</html>

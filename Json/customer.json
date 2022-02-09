@@ -1,0 +1,73 @@
+{
+    "customer": [
+       {
+          "id": "501",
+          "name": "Rachit",
+          "age": "51",
+          "email": "rachit@gmail.com",
+          "mobile": "9898026206"
+       },
+       {
+          "id": "502",
+          "name": "Ginni",
+          "age": "17",
+          "email": "ginni@gmail.com",
+          "mobile": "1231226206"
+       },
+       {
+          "id": "503",
+          "name": "Rammana",
+          "age": "27",
+          "email": "rama@gmail.com",
+          "mobile": "1234226206"
+       },
+       {
+          "id": "504",
+          "name": "Meghna",
+          "age": "69",
+          "email": "meghna@gmail.com",
+          "mobile": "9586038522"
+       },
+       {
+          "id": "505",
+          "name": "Ravi",
+          "age": "20",
+          "email": "ravi@gmail.com",
+          "mobile": "9909405933"
+       },
+       {
+        "id": "506",
+        "name": "Bhoomi",
+        "age": "30",
+        "email": "bhoomi@gmail.com",
+        "mobile": "9509405933"
+     },
+     {
+        "id": "507",
+        "name": "Jay",
+        "age": "25",
+        "email": "jay@gmail.com",
+        "mobile": "9909401933"
+     },
+     {
+        "id": "508",
+        "name": "Reshma",
+        "age": "28",
+        "email": "reshma@gmail.com",
+        "mobile": "9909415933"
+     },
+     {
+        "id": "509",
+        "name": "Maish",
+        "age": "40",
+        "email": "manish@gmail.com",
+        "mobile": "9109405933"
+     },{
+        "id": "510",
+        "name": "Mallika",
+        "age": "13",
+        "email": "mallika@gmail.com",
+        "mobile": "9999405933"
+     }
+    ]
+ }
