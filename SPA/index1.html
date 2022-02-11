@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    
+    
+    <title>SPA</title>
+    
+    <script src="angular.min.js"></script>
+    <script src="route.js"></script>
+    <script src="module1.js"></script>
+    <style>
+        h1,h2,h3,h4,h5,h6{
+	        font-family: 'Oswald', sans-serif;
+        }
+        
+        
+        .link1 {
+            border-radius: 25px;
+            width: 10vw;
+            height: 40vh;
+            font-size: x-large;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            margin: 10px 5px;
+            display: flex;
+            color: rgb(95, 92, 92);
+            border: 5px solid black;
+            flex-direction: column;
+            justify-content: space-around;
+            place-items: center;
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 200px auto;
+            margin-left: 100px;
+        }
+
+        .main2{
+            padding: 60px;
+           
+        }
+        
+        body, html {
+                height: 100%;
+                margin: 0;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("carbg.jpg");
+            /* Full height */
+            height: 100%; 
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #a15037;
+            border: none;
+            color: #ccabab;
+            text-align: center;
+            font-size: 18px;
+            width: 100px;
+            height: 40px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .size {
+            width: 50%;
+            height: 200px;
+            background-color: rgb(90, 204, 175);
+            border: 2px solid black;
+        }
+
+        a.link {color:#ff0000;}
+        a:visited {color:#123a49;}
+        a:hover {font-size:150%;}
+
+      
+    </style>
+</head>
+<body class="bg" >
+    
+    <div class="main">
+        <div class="link1">
+            <a href="#!gallery" >Gallery</a>
+            <a href="#!cars" >Cars</a>
+            <a href="#!customers" >Customers</a>
+            
+        </div>
+       <div class="main2" >
+        <ng-view>
+
+        </ng-view>
+    </div>
+</body>   
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Application</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script src="route.js"></script>
+    <script src="module1.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="jumbotron bg-dark text-white text-center">Holiday Planning & Tourism</h1>
+            </div>
+        </div>
+        <div class="row" style="margin-top: -6px;">
+            <div class="col-sm-3">
+                <div class="bg-dark" style="height:700px">
+                    <ul style="list-style:none; font-size: 4vh;">
+                        <li><a href="#!gallery" style="text-decoration: none; color: white;">Gallery</a></li>
+                        <li><a href="#!train" style="text-decoration: none; color: turquoise;">Trains</a></li>
+                        <li><a href="#!destination" style="text-decoration: none; color: yellow;">Destinations</a></li>
+                    </ul>
+                </div>
+            </div>
+                <div class="col-sm-9">
+                    <div class="ng-view">
+
+
+                    </div>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-body bg-dark text-white text-center" style="margin-top: 1px;">
+                    <h3>All rights are reserved to Aditya Biswal &copy; 2022</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
