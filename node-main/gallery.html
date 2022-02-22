@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<style>
+    .rounded{
+         border-radius: 20px;
+         height:200px;
+         width: 300px;
+         margin-top: 20px;
+         margin-bottom: 20px;
+         margin-left: 20px;
+         margin-right: 20px;
+    }
+</style>
+<body>
+    <div><center><h1>Gallery</h1></center></div>
+    <div ng-controller="galleryctr" style="padding: 30px;">
+        <table width="100%" >
+            <tr height="30%" >
+                <td>  <img ng-src="{{pic1}}"  class="rounded"> </td>
+                <td>   <img ng-src="{{pic2}}"  class="rounded"> </td>
+                <td> <img ng-src="{{pic3}}"  class="rounded"> </td>
+            </tr>
+            <tr>
+                <td> <img ng-src="{{pic4}}"  class="rounded"> </td>
+                <td><img ng-src="{{pic5}}"  class="rounded"></td>
+                <td><img ng-src="{{pic6}}"  class="rounded"></td>
+            </tr>
+
+        </table>
+    
+    </div>
+</body>
+</html>

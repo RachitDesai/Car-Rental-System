@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+            .size {
+            width: 50%;
+            height: 200px;
+            background-color: rgb(90, 204, 175);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Customer and Driver</h2>
+    <div ng-controller = "customerctr">
+        <table class="size">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Car</th>
+                    <th>Driver</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cust in customers">
+                    <td>{{cust.name}}</td>
+                    <td>{{cust.car}}</td>
+                    <td>{{cust.driver}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</body>
+</html>

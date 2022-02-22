@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html >
+<head>
+   
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    
+    <style>
+        h1,h2,h3,h4,h5,h6{
+	        font-family: 'Oswald', sans-serif;
+        }
+        
+        
+        .link1 {
+            border-radius: 25px;
+            width: 10vw;
+            height: 40vh;
+            font-size: x-large;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            margin: 10px 5px;
+            display: flex;
+            color: rgb(95, 92, 92);
+            border: 5px solid black;
+            flex-direction: column;
+            justify-content: space-around;
+            place-items: center;
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 200px auto;
+            margin-left: 100px;
+        }
+
+        .main2{
+            padding: 60px;
+           
+        }
+        
+        body, html {
+                height: 100%;
+                margin: 0;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("carbg.jpg");
+            /* Full height */
+            height: 100%; 
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #a15037;
+            border: none;
+            color: #ccabab;
+            text-align: center;
+            font-size: 18px;
+            width: 100px;
+            height: 40px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .size {
+            width: 50%;
+            height: 200px;
+            background-color: rgb(90, 204, 175);
+            border: 2px solid black;
+        }
+
+        a.link {color:#ff0000;}
+        a:visited {color:#123a49;}
+        a:hover {font-size:150%;}
+
+      
+    </style>
+
+</head>
+
+<body  class="bg" ng-app="myapp">
+    <h2 style="text-align: center;">Student Details</h2>
+
+    
+       
+<table class="size" align="center" ng-controller="displayctr">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col" >Name</th>
+        <th scope="col" >Section</th>
+        <th scope="col">Marks</th>
+        <th scope="col" >Attendence </th>
+    </tr>
+   
+    <tbody>
+        <tr ng-repeat="item in names">
+            <td >{{item.stuid}}</td>
+            <td>{{item.stuname}}</td>
+            <td>{{item.section}}</td>
+            <td>{{item.marks}}</td>
+            <td>{{item.attendence_percentage}}</td>
+           
+
+        </tr>
+    </tbody>
+</table>
+
+    </div>
+    
+</body>
+</html>
